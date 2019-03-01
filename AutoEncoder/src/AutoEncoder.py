@@ -109,6 +109,22 @@ for epoch in range(1, nb_epoch + 1):
             s +=1.
             optimizer.step()
     print('epoch: ' + str(epoch) + '- loss: ' + str(train_loss/s))
+
+# Testing the Model
+test_loss = 0
+s = 0.
+for id_user in range(nb_users):
+    input = Variable(training_set[id_user]).unsqueeze(0)
+    target = Variable(test_set[id_user])
+    if torch.sum(target.data > 0) >0:
+        output = sae(input)
+        target.require_grad = False
+        output[target.view(1,-1) == 0] = 0
+        loss = criterion(output, target)
+        mean_corrector = nb_movies/float(torch.sum(target.data > 0) + 1e-10)
+        test_loss += np.sqrt(loss.item()*mean_corrector) 
+        s+=1.
+print('loss: ' + str(test_loss/s))
             
 
 
