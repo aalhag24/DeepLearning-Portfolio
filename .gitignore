@@ -105,3 +105,4 @@ venv.bak/
 Recurrent_Neural_Network/bin/GOOG.csv
 Recurrent_Neural_Network/bin/Google_Stock_Price_Test.csv
 Recurrent_Neural_Network/bin/Google_Stock_Price_Train.csv
+.vscode/settings.json
