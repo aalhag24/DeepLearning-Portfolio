@@ -109,3 +109,6 @@ Recurrent_Neural_Network/bin/Google_Stock_Price_Train.csv
 
 AutoEncoder/bin/ml-1m/
 AutoEncoder/bin/ml-100k/
+Gradient_Descent/bin/sample_submission.csv
+Gradient_Descent/bin/test.csv
+Gradient_Descent/bin/train.csv
